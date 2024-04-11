@@ -12,13 +12,15 @@ liquidity = {
 }
 
 mp = {}
-
+flag = 0
 def dfs(ans, cur, depth, v):
-    if depth == 5:
+    global flag
+    if depth == 5 or flag == 1:
         return
     v.append(cur)
     if cur == 2:
         if ans > 20:
+            flag = 1
             # print(cur)
             # print(ans)
             # print("ok")
@@ -35,12 +37,14 @@ def dfs(ans, cur, depth, v):
                     print("tokenD->", end = '')
                 elif(i == 5):
                     print("tokenE->", end = '')
-            print("tokenB")
+            print("tokenB, tokenB balance=", end = '')
+            print(ret)
             return
     else:
         x, y = mp[(cur, 2)]
         ret = 997 * ans * y / (1000 * x + 997 * ans)
         if ret > 20:
+            flag = 1
             v.append(2)
             # print(cur)
             # print(ret)
@@ -58,7 +62,8 @@ def dfs(ans, cur, depth, v):
                     print("tokenD->", end = '')
                 elif(i == 5):
                     print("tokenE->", end = '')
-            print("tokenB")
+            print("tokenB, tokenB balance=", end = '')
+            print(ret)
             return
 
     for i in range(1, 6):
