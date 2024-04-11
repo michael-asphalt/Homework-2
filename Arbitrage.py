@@ -23,7 +23,19 @@ def dfs(ans, cur, depth, v):
             # print(ans)
             # print("ok")
             print("path: ", end = '')
-            print(v)
+            v.pop()
+            for i in v:
+                if(i == 1):
+                    print("tokenA->", end = '')
+                elif(i == 2):
+                    print("tokenB->", end = '')
+                elif(i == 3):
+                    print("tokenC->", end = '')
+                elif(i == 4):
+                    print("tokenD->", end = '')
+                elif(i == 5):
+                    print("tokenE->", end = '')
+            print("tokenB")
             return
     else:
         x, y = mp[(cur, 2)]
@@ -34,7 +46,19 @@ def dfs(ans, cur, depth, v):
             # print(ret)
             # print("ok")
             print("path: ", end = '')
-            print(v)
+            v.pop()
+            for i in v:
+                if(i == 1):
+                    print("tokenA->", end = '')
+                elif(i == 2):
+                    print("tokenB->", end = '')
+                elif(i == 3):
+                    print("tokenC->", end = '')
+                elif(i == 4):
+                    print("tokenD->", end = '')
+                elif(i == 5):
+                    print("tokenE->", end = '')
+            print("tokenB")
             return
 
     for i in range(1, 6):
